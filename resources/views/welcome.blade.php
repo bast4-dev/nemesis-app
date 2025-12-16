@@ -8,11 +8,12 @@
 
     @foreach ($articles as $article)
 
-        @if($loop->iteration == $loop->count)
+        @if($loop->last)
             @break
         @endif
         
         <x-article :title="$article['title']" :description="$article['description']"/>
+
 
     @endforeach
 
