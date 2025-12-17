@@ -4,17 +4,14 @@
 
 @section('content')
 
-    <h2>Bienvenue sur le site de {{ $name }}</h2>
+<h2>Bienvenue sur le site de {{ $name }}</h2>
 
-    @foreach ($articles as $article)
-
-        @if($loop->last)
-            @break
-        @endif
-        
-        <x-article :title="$article['title']" :description="$article['description']"/>
-
-
-    @endforeach
+@forelse ($articles as $article)
+<a href="/articles/{{ $article->id }}">
+    <x-article :title="$article->title" :description="$article->description" />
+</a>
+@empty
+<p>Aucun article disponible pour le moment</p>
+@endforelse
 
 @endsection

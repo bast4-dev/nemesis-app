@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Détails de l\'article ' . $id)
+@section('title', 'Détails de l\'article n°' . $article->id)
 
 @section('content')
-    <h2>Article portant l'identifiant {{ $id }}</h2>
+     <x-article :title="$article->title" :description="$article->description"/>
 @endsection
