@@ -7,7 +7,7 @@
 <h2>Bienvenue sur le site de {{ $name }}</h2>
 
 @forelse ($articles as $article)
-<a href="/articles/{{ $article->id }}">
+<a href="{{ route('articles.show', $article->id)}}">
     <x-article :title="$article->title" :description="$article->description" />
 </a>
 @empty
